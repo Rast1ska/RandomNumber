@@ -7,11 +7,23 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        setupView()
     }
+    
+    private func setupView() {
+        view.backgroundColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        setupNavigationController()
+        
+    }
+    
+    private func setupNavigationController() {
+        title = "Random Number"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
 }
 
