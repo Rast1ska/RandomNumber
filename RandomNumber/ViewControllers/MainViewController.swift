@@ -48,6 +48,7 @@ final class MainViewController: UIViewController {
     
     @objc func goSetting() {
         let detailViewController = DetailViewController()
+        detailViewController.randomNumber = randomNumber
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

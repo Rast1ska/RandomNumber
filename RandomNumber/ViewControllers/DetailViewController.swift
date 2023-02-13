@@ -9,6 +9,8 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
+    var randomNumber: RandomNumber?
+    
     let minTextField = NumberTextField(placeholder: "min number...")
     let maxTextField = NumberTextField(placeholder: "max number...")
     let saveButton = RandomButtonNumber(textTitle: "Save")
@@ -26,6 +28,13 @@ final class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        config(randomNumber: randomNumber)
+    }
+    
+    private func config(randomNumber: RandomNumber?) {
+        guard let randomNumber = randomNumber else { return }
+        minTextField.text = "\(randomNumber.minNumber)"
+        maxTextField.text = "\(randomNumber.maxNumber)"
     }
     
     private func setupView() {
