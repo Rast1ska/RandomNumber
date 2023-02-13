@@ -9,6 +9,8 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
+    private var randomNumber = RandomNumber(minNumber: 1, maxNumber: 100)
+    
     private let getRandomNumberButton = RandomButtonNumber(textTitle: "Get random number!")
     
     private let randomNumberLabel: UILabel = {
@@ -29,6 +31,11 @@ final class MainViewController: UIViewController {
         setupNavigationController()
         addSubview()
         setupConstraints()
+        targetButton()
+    }
+    
+    private func targetButton() {
+        getRandomNumberButton.addTarget(self, action: #selector(getRandomNumber), for: .touchUpInside)
     }
     
     private func setupNavigationController() {
@@ -42,6 +49,10 @@ final class MainViewController: UIViewController {
     @objc func goSetting() {
         let detailViewController = DetailViewController()
         navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
+    @objc func getRandomNumber() {
+        randomNumberLabel.text = "\(randomNumber.getRandomNumber)"
     }
     private func addSubview() {
         view.addSubview(getRandomNumberButton)

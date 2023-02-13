@@ -11,7 +11,7 @@ struct RandomNumber {
     let minNumber: Int
     let maxNumber: Int
     
-    var randomNumber: Int {
+    var getRandomNumber: Int {
         Int.random(in: minNumber...maxNumber)
     }
 }
