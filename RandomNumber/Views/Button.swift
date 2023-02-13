@@ -8,10 +8,14 @@
 import UIKit
 
 class RandomButtonNumber: UIButton {
-
-    init(buttonText: String) {
+    
+    override init(frame: CGRect) {
         super.init(frame: .zero)
-        setupButton(buttonText: buttonText)
+    }
+    
+    convenience init(textTitle: String) {
+        self.init(type: .system)
+        setupButton(buttonText: textTitle)
     }
     
     @available(*, unavailable)
@@ -24,6 +28,7 @@ class RandomButtonNumber: UIButton {
         backgroundColor = .systemGreen
         layer.cornerRadius = 10
         titleLabel?.font = .boldSystemFont(ofSize: 18)
+        tintColor = .white
         
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 7

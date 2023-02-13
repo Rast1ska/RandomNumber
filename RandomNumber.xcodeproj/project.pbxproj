@@ -14,6 +14,7 @@
 		1796D31B2993B77800AA65E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1796D3192993B77800AA65E1 /* LaunchScreen.storyboard */; };
 		1796D3282994FDD200AA65E1 /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796D3272994FDD200AA65E1 /* RandomNumber.swift */; };
 		1796D32B2994FE4D00AA65E1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796D32A2994FE4D00AA65E1 /* Button.swift */; };
+		17BA486A299A43CE00AF6FAF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA4869299A43CE00AF6FAF /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1796D31C2993B77800AA65E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1796D3272994FDD200AA65E1 /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
 		1796D32A2994FE4D00AA65E1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		17BA4869299A43CE00AF6FAF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				1796D3122993B77500AA65E1 /* MainViewController.swift */,
+				17BA4869299A43CE00AF6FAF /* DetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				1796D32B2994FE4D00AA65E1 /* Button.swift in Sources */,
 				1796D3132993B77500AA65E1 /* MainViewController.swift in Sources */,
 				1796D30F2993B77500AA65E1 /* AppDelegate.swift in Sources */,
+				17BA486A299A43CE00AF6FAF /* DetailViewController.swift in Sources */,
 				1796D3112993B77500AA65E1 /* SceneDelegate.swift in Sources */,
 				1796D3282994FDD200AA65E1 /* RandomNumber.swift in Sources */,
 			);

@@ -9,7 +9,15 @@ import UIKit
 
 final class MainViewController: UIViewController {
     
-    private let getRandomNumberButton = RandomButtonNumber(buttonText: "Get random number!")
+    private let getRandomNumberButton = RandomButtonNumber(textTitle: "Get random number!")
+    
+    private let randomNumberLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "0"
+        label.font = .boldSystemFont(ofSize: 75)
+        return label
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +38,16 @@ final class MainViewController: UIViewController {
     
     private func addSubview() {
         view.addSubview(getRandomNumberButton)
+        view.addSubview(randomNumberLabel)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            randomNumberLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            randomNumberLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
             getRandomNumberButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            getRandomNumberButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            getRandomNumberButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             getRandomNumberButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
         ])
     }
