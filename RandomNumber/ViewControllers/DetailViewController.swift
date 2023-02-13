@@ -9,7 +9,8 @@ import UIKit
 
 final class DetailViewController: UIViewController {
     
-    var randomNumber: RandomNumber?
+    var randomNumber: RandomNumber!
+    var delegate: DetailViewControllerDelegate!
     
     let minTextField = NumberTextField(placeholder: "min number...")
     let maxTextField = NumberTextField(placeholder: "max number...")
@@ -29,6 +30,23 @@ final class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         config(randomNumber: randomNumber)
+        targetButton()
+        minTextField.delegate = self
+        maxTextField.delegate = self
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    private func targetButton() {
+        saveButton.addTarget(self, action: #selector(sendInfo), for: .touchUpInside)
+    }
+    
+    @objc func sendInfo() {
+        delegate.setNewValue(randomNumber: randomNumber)
+        view.endEditing(true)
+        navigationController?.popViewController(animated: true)
     }
     
     private func config(randomNumber: RandomNumber?) {
@@ -68,3 +86,17 @@ final class DetailViewController: UIViewController {
         title = "Setting"
     }
 }
+
+extension DetailViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let newValue = textField.text else { return }
+        guard let numberValue = Int(newValue) else { return }
+        
+        if textField == minTextField {
+            randomNumber?.minNumber = numberValue
+        } else if textField == maxTextField {
+            randomNumber?.maxNumber = numberValue
+        }
+    }
+}
+

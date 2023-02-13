@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol DetailViewControllerDelegate {
+    func setNewValue(randomNumber: RandomNumber)
+}
+
 final class MainViewController: UIViewController {
     
     private var randomNumber = RandomNumber(minNumber: 1, maxNumber: 100)
@@ -49,6 +53,7 @@ final class MainViewController: UIViewController {
     @objc func goSetting() {
         let detailViewController = DetailViewController()
         detailViewController.randomNumber = randomNumber
+        detailViewController.delegate = self
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -69,6 +74,12 @@ final class MainViewController: UIViewController {
             getRandomNumberButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
             getRandomNumberButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7)
         ])
+    }
+}
+
+extension MainViewController: DetailViewControllerDelegate {
+    func setNewValue(randomNumber: RandomNumber) {
+        self.randomNumber = randomNumber
     }
 }
 
