@@ -52,8 +52,11 @@ final class MainViewController: UIViewController {
     
     @objc func goSetting() {
         let detailViewController = DetailViewController()
+<<<<<<< HEAD
         detailViewController.randomNumber = randomNumber
         detailViewController.delegate = self
+=======
+>>>>>>> parent of 178d38c (setup send info in another vc)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     
