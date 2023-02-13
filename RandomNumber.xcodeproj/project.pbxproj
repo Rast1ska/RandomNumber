@@ -13,7 +13,7 @@
 		1796D3182993B77800AA65E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1796D3172993B77800AA65E1 /* Assets.xcassets */; };
 		1796D31B2993B77800AA65E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1796D3192993B77800AA65E1 /* LaunchScreen.storyboard */; };
 		1796D3282994FDD200AA65E1 /* RandomNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796D3272994FDD200AA65E1 /* RandomNumber.swift */; };
-		1796D32B2994FE4D00AA65E1 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796D32A2994FE4D00AA65E1 /* Button.swift */; };
+		1796D32B2994FE4D00AA65E1 /* RandomButtonNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796D32A2994FE4D00AA65E1 /* RandomButtonNumber.swift */; };
 		17BA486A299A43CE00AF6FAF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA4869299A43CE00AF6FAF /* DetailViewController.swift */; };
 		17BA486C299A44D600AF6FAF /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA486B299A44D600AF6FAF /* TextField.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		1796D31A2993B77800AA65E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1796D31C2993B77800AA65E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1796D3272994FDD200AA65E1 /* RandomNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomNumber.swift; sourceTree = "<group>"; };
-		1796D32A2994FE4D00AA65E1 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		1796D32A2994FE4D00AA65E1 /* RandomButtonNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomButtonNumber.swift; sourceTree = "<group>"; };
 		17BA4869299A43CE00AF6FAF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		17BA486B299A44D600AF6FAF /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,7 +110,7 @@
 		1796D3292994FE2600AA65E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1796D32A2994FE4D00AA65E1 /* Button.swift */,
+				1796D32A2994FE4D00AA65E1 /* RandomButtonNumber.swift */,
 				17BA486B299A44D600AF6FAF /* TextField.swift */,
 			);
 			path = Views;
@@ -186,7 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1796D32B2994FE4D00AA65E1 /* Button.swift in Sources */,
+				1796D32B2994FE4D00AA65E1 /* RandomButtonNumber.swift in Sources */,
 				1796D3132993B77500AA65E1 /* MainViewController.swift in Sources */,
 				1796D30F2993B77500AA65E1 /* AppDelegate.swift in Sources */,
 				17BA486C299A44D600AF6FAF /* TextField.swift in Sources */,

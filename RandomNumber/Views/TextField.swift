@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NumberTextField: UITextField {
+final class NumberTextField: UITextField {
     
     private let padding = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 40)
     
@@ -35,6 +35,8 @@ class NumberTextField: UITextField {
     
     
     private func setupTextField(placeholder: String) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
         textColor = .white
         layer.cornerRadius = 10
         layer.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
