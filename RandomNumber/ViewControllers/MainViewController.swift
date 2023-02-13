@@ -34,8 +34,15 @@ final class MainViewController: UIViewController {
     private func setupNavigationController() {
         title = "Random Number"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(goSetting))
+        navigationController?.navigationBar.tintColor = .white
     }
     
+    @objc func goSetting() {
+        let detailViewController = DetailViewController()
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
     private func addSubview() {
         view.addSubview(getRandomNumberButton)
         view.addSubview(randomNumberLabel)
