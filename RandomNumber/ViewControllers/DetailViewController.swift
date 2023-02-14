@@ -45,6 +45,7 @@ final class DetailViewController: UIViewController {
     
     @objc func sendInfo() {
         view.endEditing(true)
+        checkValid(textFieldOne: minTextField, textFieldTwo: maxTextField)
         delegate.setNewValue(randomNumber: randomNumber)
         navigationController?.popViewController(animated: true)
     }
@@ -85,6 +86,23 @@ final class DetailViewController: UIViewController {
     private func setupNavigationController() {
         title = "Setting"
     }
+    
+    private func checkValid(textFieldOne: UITextField, textFieldTwo: UITextField) {
+        guard let newValueOne = textFieldOne.text, let newValueTwo = textFieldTwo.text else {
+            showAlertController(title: "Error!", message: "You can't leave an empty field!")
+            return
+        }
+        
+        guard let numberValueOne = Int(newValueOne), let numberValueTwo = Int(newValueTwo) else {
+            showAlertController(title: "Error!", message: "Enter the correct number")
+            return
+        }
+        
+        if numberValueOne >= numberValueTwo {
+            showAlertController(title: "Error!", message: "The maximum value must be greater than the minimum")
+            return
+        }
+    }
 }
 
 extension DetailViewController: UITextFieldDelegate {
@@ -100,3 +118,11 @@ extension DetailViewController: UITextFieldDelegate {
     }
 }
 
+extension DetailViewController {
+    func showAlertController(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alertController.addAction(okAction)
+        present(alertController, animated: true)
+    }
+}
